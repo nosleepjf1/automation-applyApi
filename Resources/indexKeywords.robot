@@ -45,7 +45,11 @@ Fill address
 Fill password
     indexKeywords.Fill address
     applyApi.Enter password
-    applyApi.Check job questions
     applyApi.Check resume
     applyApi.Employment History
     applyApi.Education
+    applyApi.Voluntary Disclosure
+    applyApi.Source
+    applyApi.Check job questions
+    applyApi.Additional Questions
+    applyApi.Submit Application
