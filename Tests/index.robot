@@ -6,7 +6,7 @@ Resource  ../Resources/indexKeywords.robot
 Test Setup  commonKeywords.Begin web test
 #Test Teardown  commonKeywords.End web test
 
-#run test  robot -d Results Tests/index.robot
+#run test   robot -d Results -i current Tests/index.robot
 *** Variables ***
 ${URL} =  https://lifestory.applicantpro.com/jobs/
 ${MICROSECONDS}

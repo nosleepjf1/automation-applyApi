@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.8.4 on darwin)" generated="20200812 12:18:33.568" rpa="false">
+<robot generator="Robot 3.2.1 (Python 3.8.4 on darwin)" generated="20200822 10:30:55.389" rpa="false">
 <suite id="s1" name="Index" source="/Users/jonnyfewkes/PycharmProjects/applyApi/Tests/index.robot">
-<test id="s1-t1" name="Time">
+<test id="s1-t1" name="User can enter password">
 <kw name="Begin web test" library="commonKeywords" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -9,852 +9,14 @@
 <arg>about:blank</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20200812 12:18:34.053" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200812 12:18:34.053" endtime="20200812 12:18:38.259"></status>
+<msg timestamp="20200822 10:30:55.778" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20200822 10:30:55.777" endtime="20200822 10:30:58.547"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200812 12:18:38.260" endtime="20200812 12:18:38.401"></status>
+<status status="PASS" starttime="20200822 10:30:58.548" endtime="20200822 10:30:58.725"></status>
 </kw>
-<status status="PASS" starttime="20200812 12:18:34.053" endtime="20200812 12:18:38.401"></status>
-</kw>
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%Y-%m-%d %H:%M:%S.%f</arg>
-</arguments>
-<assign>
-<var>${CurrentDate}</var>
-</assign>
-<msg timestamp="20200812 12:18:38.405" level="INFO">${CurrentDate} = 2020-08-12 12:18:38.403494</msg>
-<status status="PASS" starttime="20200812 12:18:38.402" endtime="20200812 12:18:38.406"></status>
-</kw>
-<kw name="Convert Date" library="DateTime">
-<doc>Converts between supported `date formats`.</doc>
-<arguments>
-<arg>${CurrentDate}</arg>
-<arg>datetime</arg>
-</arguments>
-<assign>
-<var>${datetime}</var>
-</assign>
-<msg timestamp="20200812 12:18:38.417" level="INFO">${datetime} = 2020-08-12 12:18:38.403494</msg>
-<status status="PASS" starttime="20200812 12:18:38.406" endtime="20200812 12:18:38.417"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>${datetime.microsecond}</arg>
-</arguments>
-<assign>
-<var>${MICROSECONDS}</var>
-</assign>
-<msg timestamp="20200812 12:18:38.421" level="INFO">${MICROSECONDS} = 403494</msg>
-<status status="PASS" starttime="20200812 12:18:38.419" endtime="20200812 12:18:38.421"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${MICROSECONDS}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:38.423" level="INFO">403494</msg>
-<status status="PASS" starttime="20200812 12:18:38.422" endtime="20200812 12:18:38.424"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:34.052" endtime="20200812 12:18:38.425" critical="yes"></status>
-</test>
-<test id="s1-t2" name="User can view the home page and see jobs">
-<kw name="Begin web test" library="commonKeywords" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20200812 12:18:38.430" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200812 12:18:38.429" endtime="20200812 12:18:40.979"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200812 12:18:40.980" endtime="20200812 12:18:41.145"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:38.428" endtime="20200812 12:18:41.145"></status>
-</kw>
-<kw name="Open landing page" library="indexKeywords">
-<kw name="Open web page" library="landingPage">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:41.149" level="INFO">Opening url 'https://lifestory.applicantpro.com/jobs/'</msg>
-<status status="PASS" starttime="20200812 12:18:41.148" endtime="20200812 12:18:42.359"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:41.147" endtime="20200812 12:18:42.360"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Current Job Listings</arg>
-</arguments>
-<status status="PASS" starttime="20200812 12:18:42.360" endtime="20200812 12:18:42.389"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:41.146" endtime="20200812 12:18:42.390"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>hello</arg>
-</arguments>
-<msg timestamp="20200812 12:18:42.392" level="INFO">hello</msg>
-<status status="PASS" starttime="20200812 12:18:42.391" endtime="20200812 12:18:42.392"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:38.427" endtime="20200812 12:18:42.393" critical="yes"></status>
-</test>
-<test id="s1-t3" name="User can view a job">
-<kw name="Begin web test" library="commonKeywords" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20200812 12:18:42.395" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200812 12:18:42.395" endtime="20200812 12:18:44.870"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200812 12:18:44.871" endtime="20200812 12:18:45.017"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:42.395" endtime="20200812 12:18:45.017"></status>
-</kw>
-<kw name="Click job" library="indexKeywords">
-<kw name="Open web page" library="landingPage">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:45.019" level="INFO">Opening url 'https://lifestory.applicantpro.com/jobs/'</msg>
-<status status="PASS" starttime="20200812 12:18:45.019" endtime="20200812 12:18:46.305"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:45.019" endtime="20200812 12:18:46.306"></status>
-</kw>
-<kw name="Click job" library="landingPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://*[@id="job_listings"]/div/a[1]/div/h4</arg>
-</arguments>
-<msg timestamp="20200812 12:18:46.309" level="INFO">Clicking element 'xpath://*[@id="job_listings"]/div/a[1]/div/h4'.</msg>
-<status status="PASS" starttime="20200812 12:18:46.308" endtime="20200812 12:18:47.342"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Apply for this Position</arg>
-</arguments>
-<status status="PASS" starttime="20200812 12:18:47.342" endtime="20200812 12:18:47.361"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:46.307" endtime="20200812 12:18:47.362"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:45.018" endtime="20200812 12:18:47.362"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:42.394" endtime="20200812 12:18:47.362" critical="yes"></status>
-</test>
-<test id="s1-t4" name="User can fill and submit basic job form">
-<kw name="Begin web test" library="commonKeywords" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20200812 12:18:47.365" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200812 12:18:47.364" endtime="20200812 12:18:49.924"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200812 12:18:49.925" endtime="20200812 12:18:50.110"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:47.364" endtime="20200812 12:18:50.111"></status>
-</kw>
-<kw name="Fill job form" library="indexKeywords">
-<kw name="Click job" library="indexKeywords">
-<kw name="Open web page" library="landingPage">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:50.116" level="INFO">Opening url 'https://lifestory.applicantpro.com/jobs/'</msg>
-<status status="PASS" starttime="20200812 12:18:50.115" endtime="20200812 12:18:51.246"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:50.114" endtime="20200812 12:18:51.247"></status>
-</kw>
-<kw name="Click job" library="landingPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://*[@id="job_listings"]/div/a[1]/div/h4</arg>
-</arguments>
-<msg timestamp="20200812 12:18:51.249" level="INFO">Clicking element 'xpath://*[@id="job_listings"]/div/a[1]/div/h4'.</msg>
-<status status="PASS" starttime="20200812 12:18:51.248" endtime="20200812 12:18:52.118"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Apply for this Position</arg>
-</arguments>
-<status status="PASS" starttime="20200812 12:18:52.118" endtime="20200812 12:18:52.167"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:51.247" endtime="20200812 12:18:52.168"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:50.113" endtime="20200812 12:18:52.168"></status>
-</kw>
-<kw name="Enter first name" library="jobPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=first_name</arg>
-<arg>${firstName}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:52.169" level="INFO">Typing text 'john' into text field 'id=first_name'.</msg>
-<status status="PASS" starttime="20200812 12:18:52.169" endtime="20200812 12:18:52.415"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:52.168" endtime="20200812 12:18:52.416"></status>
-</kw>
-<kw name="Enter last name" library="jobPage">
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%Y-%m-%d %H:%M:%S.%f</arg>
-</arguments>
-<assign>
-<var>${CurrentDate}</var>
-</assign>
-<msg timestamp="20200812 12:18:52.418" level="INFO">${CurrentDate} = 2020-08-12 12:18:52.417977</msg>
-<status status="PASS" starttime="20200812 12:18:52.417" endtime="20200812 12:18:52.418"></status>
-</kw>
-<kw name="Convert Date" library="DateTime">
-<doc>Converts between supported `date formats`.</doc>
-<arguments>
-<arg>${CurrentDate}</arg>
-<arg>datetime</arg>
-</arguments>
-<assign>
-<var>${datetime}</var>
-</assign>
-<msg timestamp="20200812 12:18:52.420" level="INFO">${datetime} = 2020-08-12 12:18:52.417977</msg>
-<status status="PASS" starttime="20200812 12:18:52.419" endtime="20200812 12:18:52.420"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=last_name</arg>
-<arg>${lastName}${datetime.microsecond}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:52.421" level="INFO">Typing text 'doe417977' into text field 'id=last_name'.</msg>
-<status status="PASS" starttime="20200812 12:18:52.420" endtime="20200812 12:18:52.587"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:52.416" endtime="20200812 12:18:52.587"></status>
-</kw>
-<kw name="Enter email" library="jobPage">
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%Y-%m-%d %H:%M:%S.%f</arg>
-</arguments>
-<assign>
-<var>${CurrentDate}</var>
-</assign>
-<msg timestamp="20200812 12:18:52.589" level="INFO">${CurrentDate} = 2020-08-12 12:18:52.589044</msg>
-<status status="PASS" starttime="20200812 12:18:52.588" endtime="20200812 12:18:52.590"></status>
-</kw>
-<kw name="Convert Date" library="DateTime">
-<doc>Converts between supported `date formats`.</doc>
-<arguments>
-<arg>${CurrentDate}</arg>
-<arg>datetime</arg>
-</arguments>
-<assign>
-<var>${datetime}</var>
-</assign>
-<msg timestamp="20200812 12:18:52.592" level="INFO">${datetime} = 2020-08-12 12:18:52.589044</msg>
-<status status="PASS" starttime="20200812 12:18:52.591" endtime="20200812 12:18:52.593"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=email</arg>
-<arg>${firstName}${lastName}${datetime.microsecond}@applicantpro.com</arg>
-</arguments>
-<msg timestamp="20200812 12:18:52.594" level="INFO">Typing text 'johndoe589044@applicantpro.com' into text field 'id=email'.</msg>
-<status status="PASS" starttime="20200812 12:18:52.593" endtime="20200812 12:18:52.933"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${MICROSECONDS}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:52.934" level="INFO"></msg>
-<status status="PASS" starttime="20200812 12:18:52.934" endtime="20200812 12:18:52.934"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:52.587" endtime="20200812 12:18:52.934"></status>
-</kw>
-<kw name="Enter phone" library="jobPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=contact_number</arg>
-<arg>${phone}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:52.935" level="INFO">Typing text '0000000000' into text field 'id=contact_number'.</msg>
-<status status="PASS" starttime="20200812 12:18:52.935" endtime="20200812 12:18:53.117"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:52.934" endtime="20200812 12:18:53.118"></status>
-</kw>
-<kw name="Click checkbox" library="jobPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>id=info_use_consent</arg>
-</arguments>
-<msg timestamp="20200812 12:18:53.119" level="INFO">Clicking element 'id=info_use_consent'.</msg>
-<status status="PASS" starttime="20200812 12:18:53.119" endtime="20200812 12:18:53.258"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:53.118" endtime="20200812 12:18:53.258"></status>
-</kw>
-<kw name="Click submit button" library="jobPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>id=apply_button</arg>
-</arguments>
-<msg timestamp="20200812 12:18:53.259" level="INFO">Clicking button 'id=apply_button'.</msg>
-<status status="PASS" starttime="20200812 12:18:53.259" endtime="20200812 12:18:53.391"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Apply with Resume</arg>
-</arguments>
-<status status="PASS" starttime="20200812 12:18:53.391" endtime="20200812 12:18:53.622"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:53.258" endtime="20200812 12:18:53.622"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:50.112" endtime="20200812 12:18:53.622"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:47.363" endtime="20200812 12:18:53.623" critical="yes"></status>
-</test>
-<test id="s1-t5" name="User can choose resume type">
-<kw name="Begin web test" library="commonKeywords" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20200812 12:18:53.625" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200812 12:18:53.625" endtime="20200812 12:18:56.518"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200812 12:18:56.519" endtime="20200812 12:18:56.695"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:53.624" endtime="20200812 12:18:56.696"></status>
-</kw>
-<kw name="Select resume type" library="indexKeywords">
-<kw name="Fill job form" library="indexKeywords">
-<kw name="Click job" library="indexKeywords">
-<kw name="Open web page" library="landingPage">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:56.701" level="INFO">Opening url 'https://lifestory.applicantpro.com/jobs/'</msg>
-<status status="PASS" starttime="20200812 12:18:56.700" endtime="20200812 12:18:57.942"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:56.699" endtime="20200812 12:18:57.942"></status>
-</kw>
-<kw name="Click job" library="landingPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://*[@id="job_listings"]/div/a[1]/div/h4</arg>
-</arguments>
-<msg timestamp="20200812 12:18:57.945" level="INFO">Clicking element 'xpath://*[@id="job_listings"]/div/a[1]/div/h4'.</msg>
-<status status="PASS" starttime="20200812 12:18:57.944" endtime="20200812 12:18:58.914"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Apply for this Position</arg>
-</arguments>
-<status status="PASS" starttime="20200812 12:18:58.915" endtime="20200812 12:18:58.944"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:57.943" endtime="20200812 12:18:58.944"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:56.698" endtime="20200812 12:18:58.944"></status>
-</kw>
-<kw name="Enter first name" library="jobPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=first_name</arg>
-<arg>${firstName}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:58.945" level="INFO">Typing text 'john' into text field 'id=first_name'.</msg>
-<status status="PASS" starttime="20200812 12:18:58.945" endtime="20200812 12:18:59.240"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:58.945" endtime="20200812 12:18:59.241"></status>
-</kw>
-<kw name="Enter last name" library="jobPage">
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%Y-%m-%d %H:%M:%S.%f</arg>
-</arguments>
-<assign>
-<var>${CurrentDate}</var>
-</assign>
-<msg timestamp="20200812 12:18:59.243" level="INFO">${CurrentDate} = 2020-08-12 12:18:59.242509</msg>
-<status status="PASS" starttime="20200812 12:18:59.242" endtime="20200812 12:18:59.243"></status>
-</kw>
-<kw name="Convert Date" library="DateTime">
-<doc>Converts between supported `date formats`.</doc>
-<arguments>
-<arg>${CurrentDate}</arg>
-<arg>datetime</arg>
-</arguments>
-<assign>
-<var>${datetime}</var>
-</assign>
-<msg timestamp="20200812 12:18:59.245" level="INFO">${datetime} = 2020-08-12 12:18:59.242509</msg>
-<status status="PASS" starttime="20200812 12:18:59.244" endtime="20200812 12:18:59.245"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=last_name</arg>
-<arg>${lastName}${datetime.microsecond}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:59.247" level="INFO">Typing text 'doe242509' into text field 'id=last_name'.</msg>
-<status status="PASS" starttime="20200812 12:18:59.246" endtime="20200812 12:18:59.452"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:59.241" endtime="20200812 12:18:59.453"></status>
-</kw>
-<kw name="Enter email" library="jobPage">
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%Y-%m-%d %H:%M:%S.%f</arg>
-</arguments>
-<assign>
-<var>${CurrentDate}</var>
-</assign>
-<msg timestamp="20200812 12:18:59.455" level="INFO">${CurrentDate} = 2020-08-12 12:18:59.454372</msg>
-<status status="PASS" starttime="20200812 12:18:59.454" endtime="20200812 12:18:59.455"></status>
-</kw>
-<kw name="Convert Date" library="DateTime">
-<doc>Converts between supported `date formats`.</doc>
-<arguments>
-<arg>${CurrentDate}</arg>
-<arg>datetime</arg>
-</arguments>
-<assign>
-<var>${datetime}</var>
-</assign>
-<msg timestamp="20200812 12:18:59.456" level="INFO">${datetime} = 2020-08-12 12:18:59.454372</msg>
-<status status="PASS" starttime="20200812 12:18:59.455" endtime="20200812 12:18:59.456"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=email</arg>
-<arg>${firstName}${lastName}${datetime.microsecond}@applicantpro.com</arg>
-</arguments>
-<msg timestamp="20200812 12:18:59.458" level="INFO">Typing text 'johndoe454372@applicantpro.com' into text field 'id=email'.</msg>
-<status status="PASS" starttime="20200812 12:18:59.457" endtime="20200812 12:18:59.869"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${MICROSECONDS}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:59.870" level="INFO"></msg>
-<status status="PASS" starttime="20200812 12:18:59.869" endtime="20200812 12:18:59.870"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:59.453" endtime="20200812 12:18:59.870"></status>
-</kw>
-<kw name="Enter phone" library="jobPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=contact_number</arg>
-<arg>${phone}</arg>
-</arguments>
-<msg timestamp="20200812 12:18:59.872" level="INFO">Typing text '0000000000' into text field 'id=contact_number'.</msg>
-<status status="PASS" starttime="20200812 12:18:59.872" endtime="20200812 12:19:00.051"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:59.871" endtime="20200812 12:19:00.051"></status>
-</kw>
-<kw name="Click checkbox" library="jobPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>id=info_use_consent</arg>
-</arguments>
-<msg timestamp="20200812 12:19:00.052" level="INFO">Clicking element 'id=info_use_consent'.</msg>
-<status status="PASS" starttime="20200812 12:19:00.052" endtime="20200812 12:19:00.207"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:00.051" endtime="20200812 12:19:00.208"></status>
-</kw>
-<kw name="Click submit button" library="jobPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>id=apply_button</arg>
-</arguments>
-<msg timestamp="20200812 12:19:00.210" level="INFO">Clicking button 'id=apply_button'.</msg>
-<status status="PASS" starttime="20200812 12:19:00.209" endtime="20200812 12:19:00.349"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Apply with Resume</arg>
-</arguments>
-<status status="PASS" starttime="20200812 12:19:00.350" endtime="20200812 12:19:00.586"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:00.208" endtime="20200812 12:19:00.586"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:56.697" endtime="20200812 12:19:00.586"></status>
-</kw>
-<kw name="Click no thanks" library="jobPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>id=no_thanks_button</arg>
-</arguments>
-<msg timestamp="20200812 12:19:00.588" level="INFO">Clicking button 'id=no_thanks_button'.</msg>
-<status status="PASS" starttime="20200812 12:19:00.587" endtime="20200812 12:19:00.704"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>What is your current mailing address</arg>
-</arguments>
-<status status="PASS" starttime="20200812 12:19:00.705" endtime="20200812 12:19:00.940"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:00.587" endtime="20200812 12:19:00.940"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:56.696" endtime="20200812 12:19:00.940"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:18:53.623" endtime="20200812 12:19:00.941" critical="yes"></status>
-</test>
-<test id="s1-t6" name="User can enter address">
-<kw name="Begin web test" library="commonKeywords" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20200812 12:19:00.947" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200812 12:19:00.947" endtime="20200812 12:19:03.626"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200812 12:19:03.627" endtime="20200812 12:19:03.949"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:00.946" endtime="20200812 12:19:03.949"></status>
-</kw>
-<kw name="Fill address" library="indexKeywords">
-<kw name="Select resume type" library="indexKeywords">
-<kw name="Fill job form" library="indexKeywords">
-<kw name="Click job" library="indexKeywords">
-<kw name="Open web page" library="landingPage">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20200812 12:19:03.955" level="INFO">Opening url 'https://lifestory.applicantpro.com/jobs/'</msg>
-<status status="PASS" starttime="20200812 12:19:03.955" endtime="20200812 12:19:05.206"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:03.954" endtime="20200812 12:19:05.206"></status>
-</kw>
-<kw name="Click job" library="landingPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://*[@id="job_listings"]/div/a[1]/div/h4</arg>
-</arguments>
-<msg timestamp="20200812 12:19:05.209" level="INFO">Clicking element 'xpath://*[@id="job_listings"]/div/a[1]/div/h4'.</msg>
-<status status="PASS" starttime="20200812 12:19:05.208" endtime="20200812 12:19:06.204"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Apply for this Position</arg>
-</arguments>
-<status status="PASS" starttime="20200812 12:19:06.205" endtime="20200812 12:19:06.241"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:05.207" endtime="20200812 12:19:06.241"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:03.953" endtime="20200812 12:19:06.241"></status>
-</kw>
-<kw name="Enter first name" library="jobPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=first_name</arg>
-<arg>${firstName}</arg>
-</arguments>
-<msg timestamp="20200812 12:19:06.243" level="INFO">Typing text 'john' into text field 'id=first_name'.</msg>
-<status status="PASS" starttime="20200812 12:19:06.242" endtime="20200812 12:19:06.501"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:06.242" endtime="20200812 12:19:06.501"></status>
-</kw>
-<kw name="Enter last name" library="jobPage">
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%Y-%m-%d %H:%M:%S.%f</arg>
-</arguments>
-<assign>
-<var>${CurrentDate}</var>
-</assign>
-<msg timestamp="20200812 12:19:06.502" level="INFO">${CurrentDate} = 2020-08-12 12:19:06.501907</msg>
-<status status="PASS" starttime="20200812 12:19:06.502" endtime="20200812 12:19:06.502"></status>
-</kw>
-<kw name="Convert Date" library="DateTime">
-<doc>Converts between supported `date formats`.</doc>
-<arguments>
-<arg>${CurrentDate}</arg>
-<arg>datetime</arg>
-</arguments>
-<assign>
-<var>${datetime}</var>
-</assign>
-<msg timestamp="20200812 12:19:06.503" level="INFO">${datetime} = 2020-08-12 12:19:06.501907</msg>
-<status status="PASS" starttime="20200812 12:19:06.502" endtime="20200812 12:19:06.503"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=last_name</arg>
-<arg>${lastName}${datetime.microsecond}</arg>
-</arguments>
-<msg timestamp="20200812 12:19:06.504" level="INFO">Typing text 'doe501907' into text field 'id=last_name'.</msg>
-<status status="PASS" starttime="20200812 12:19:06.503" endtime="20200812 12:19:06.703"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:06.501" endtime="20200812 12:19:06.703"></status>
-</kw>
-<kw name="Enter email" library="jobPage">
-<kw name="Get Current Date" library="DateTime">
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<arguments>
-<arg>result_format=%Y-%m-%d %H:%M:%S.%f</arg>
-</arguments>
-<assign>
-<var>${CurrentDate}</var>
-</assign>
-<msg timestamp="20200812 12:19:06.705" level="INFO">${CurrentDate} = 2020-08-12 12:19:06.704412</msg>
-<status status="PASS" starttime="20200812 12:19:06.704" endtime="20200812 12:19:06.705"></status>
-</kw>
-<kw name="Convert Date" library="DateTime">
-<doc>Converts between supported `date formats`.</doc>
-<arguments>
-<arg>${CurrentDate}</arg>
-<arg>datetime</arg>
-</arguments>
-<assign>
-<var>${datetime}</var>
-</assign>
-<msg timestamp="20200812 12:19:06.706" level="INFO">${datetime} = 2020-08-12 12:19:06.704412</msg>
-<status status="PASS" starttime="20200812 12:19:06.705" endtime="20200812 12:19:06.706"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=email</arg>
-<arg>${firstName}${lastName}${datetime.microsecond}@applicantpro.com</arg>
-</arguments>
-<msg timestamp="20200812 12:19:06.707" level="INFO">Typing text 'johndoe704412@applicantpro.com' into text field 'id=email'.</msg>
-<status status="PASS" starttime="20200812 12:19:06.707" endtime="20200812 12:19:07.246"></status>
-</kw>
-<kw name="Log" library="BuiltIn">
-<doc>Logs the given message with the given level.</doc>
-<arguments>
-<arg>${MICROSECONDS}</arg>
-</arguments>
-<msg timestamp="20200812 12:19:07.247" level="INFO"></msg>
-<status status="PASS" starttime="20200812 12:19:07.247" endtime="20200812 12:19:07.247"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:06.703" endtime="20200812 12:19:07.248"></status>
-</kw>
-<kw name="Enter phone" library="jobPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=contact_number</arg>
-<arg>${phone}</arg>
-</arguments>
-<msg timestamp="20200812 12:19:07.249" level="INFO">Typing text '0000000000' into text field 'id=contact_number'.</msg>
-<status status="PASS" starttime="20200812 12:19:07.248" endtime="20200812 12:19:07.431"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:07.248" endtime="20200812 12:19:07.431"></status>
-</kw>
-<kw name="Click checkbox" library="jobPage">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>id=info_use_consent</arg>
-</arguments>
-<msg timestamp="20200812 12:19:07.433" level="INFO">Clicking element 'id=info_use_consent'.</msg>
-<status status="PASS" starttime="20200812 12:19:07.432" endtime="20200812 12:19:07.585"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:07.431" endtime="20200812 12:19:07.585"></status>
-</kw>
-<kw name="Click submit button" library="jobPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>id=apply_button</arg>
-</arguments>
-<msg timestamp="20200812 12:19:07.588" level="INFO">Clicking button 'id=apply_button'.</msg>
-<status status="PASS" starttime="20200812 12:19:07.587" endtime="20200812 12:19:07.743"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Apply with Resume</arg>
-</arguments>
-<status status="PASS" starttime="20200812 12:19:07.743" endtime="20200812 12:19:07.985"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:07.586" endtime="20200812 12:19:07.985"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:03.952" endtime="20200812 12:19:07.985"></status>
-</kw>
-<kw name="Click no thanks" library="jobPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>id=no_thanks_button</arg>
-</arguments>
-<msg timestamp="20200812 12:19:07.986" level="INFO">Clicking button 'id=no_thanks_button'.</msg>
-<status status="PASS" starttime="20200812 12:19:07.986" endtime="20200812 12:19:08.087"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>What is your current mailing address</arg>
-</arguments>
-<status status="PASS" starttime="20200812 12:19:08.087" endtime="20200812 12:19:08.325"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:07.985" endtime="20200812 12:19:08.326"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:03.951" endtime="20200812 12:19:08.326"></status>
-</kw>
-<kw name="Enter address one" library="jobPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=street1</arg>
-<arg>321 east</arg>
-</arguments>
-<msg timestamp="20200812 12:19:08.328" level="INFO">Typing text '321 east' into text field 'id=street1'.</msg>
-<status status="PASS" starttime="20200812 12:19:08.327" endtime="20200812 12:19:08.623"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:08.327" endtime="20200812 12:19:08.623"></status>
-</kw>
-<kw name="Enter address two" library="jobPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=street2</arg>
-<arg>Jupiter Lane</arg>
-</arguments>
-<msg timestamp="20200812 12:19:08.625" level="INFO">Typing text 'Jupiter Lane' into text field 'id=street2'.</msg>
-<status status="PASS" starttime="20200812 12:19:08.624" endtime="20200812 12:19:08.883"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:08.623" endtime="20200812 12:19:08.884"></status>
-</kw>
-<kw name="Enter state" library="jobPage">
-<kw name="Select From List By Value" library="SeleniumLibrary">
-<doc>Selects options from selection list ``locator`` by ``values``.</doc>
-<arguments>
-<arg>id=state_id</arg>
-<arg>45</arg>
-</arguments>
-<msg timestamp="20200812 12:19:08.886" level="INFO">Selecting options from selection list 'id=state_id' by value 45.</msg>
-<status status="PASS" starttime="20200812 12:19:08.885" endtime="20200812 12:19:09.018"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:08.884" endtime="20200812 12:19:09.019"></status>
-</kw>
-<kw name="Enter city" library="jobPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=city</arg>
-<arg>saratoga springs</arg>
-</arguments>
-<msg timestamp="20200812 12:19:09.020" level="INFO">Typing text 'saratoga springs' into text field 'id=city'.</msg>
-<status status="PASS" starttime="20200812 12:19:09.020" endtime="20200812 12:19:09.466"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:09.019" endtime="20200812 12:19:09.467"></status>
-</kw>
-<kw name="Enter zip" library="jobPage">
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>id=zip</arg>
-<arg>84045</arg>
-</arguments>
-<msg timestamp="20200812 12:19:09.468" level="INFO">Typing text '84045' into text field 'id=zip'.</msg>
-<status status="PASS" starttime="20200812 12:19:09.468" endtime="20200812 12:19:09.691"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:09.467" endtime="20200812 12:19:09.692"></status>
-</kw>
-<kw name="Click save and continue" library="jobPage">
-<kw name="Click Button" library="SeleniumLibrary">
-<doc>Clicks the button identified by ``locator``.</doc>
-<arguments>
-<arg>id=save_contact_info_button</arg>
-</arguments>
-<msg timestamp="20200812 12:19:09.694" level="INFO">Clicking button 'id=save_contact_info_button'.</msg>
-<status status="PASS" starttime="20200812 12:19:09.694" endtime="20200812 12:19:10.783"></status>
-</kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Setup Password</arg>
-</arguments>
-<status status="PASS" starttime="20200812 12:19:10.783" endtime="20200812 12:19:10.810"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:09.692" endtime="20200812 12:19:10.811"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:03.950" endtime="20200812 12:19:10.811"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:00.943" endtime="20200812 12:19:10.811" critical="yes"></status>
-</test>
-<test id="s1-t7" name="User can enter password">
-<kw name="Begin web test" library="commonKeywords" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>chrome</arg>
-</arguments>
-<msg timestamp="20200812 12:19:10.821" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200812 12:19:10.820" endtime="20200812 12:19:13.724"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200812 12:19:13.725" endtime="20200812 12:19:13.943"></status>
-</kw>
-<status status="PASS" starttime="20200812 12:19:10.819" endtime="20200812 12:19:13.944"></status>
+<status status="PASS" starttime="20200822 10:30:55.777" endtime="20200822 10:30:58.725"></status>
 </kw>
 <kw name="Fill password" library="indexKeywords">
 <kw name="Fill address" library="indexKeywords">
@@ -867,10 +29,10 @@
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20200812 12:19:13.963" level="INFO">Opening url 'https://lifestory.applicantpro.com/jobs/'</msg>
-<status status="PASS" starttime="20200812 12:19:13.962" endtime="20200812 12:19:16.152"></status>
+<msg timestamp="20200822 10:30:58.730" level="INFO">Opening url 'https://lifestory.applicantpro.com/jobs/'</msg>
+<status status="PASS" starttime="20200822 10:30:58.730" endtime="20200822 10:31:01.278"></status>
 </kw>
-<status status="PASS" starttime="20200812 12:19:13.960" endtime="20200812 12:19:16.153"></status>
+<status status="PASS" starttime="20200822 10:30:58.729" endtime="20200822 10:31:01.278"></status>
 </kw>
 <kw name="Click job" library="landingPage">
 <kw name="Click Element" library="SeleniumLibrary">
@@ -878,70 +40,582 @@
 <arguments>
 <arg>xpath://*[@id="job_listings"]/div/a[1]/div/h4</arg>
 </arguments>
-<msg timestamp="20200812 12:19:16.155" level="INFO">Clicking element 'xpath://*[@id="job_listings"]/div/a[1]/div/h4'.</msg>
-<status status="PASS" starttime="20200812 12:19:16.154" endtime="20200812 12:19:16.702"></status>
+<msg timestamp="20200822 10:31:01.281" level="INFO">Clicking element 'xpath://*[@id="job_listings"]/div/a[1]/div/h4'.</msg>
+<status status="PASS" starttime="20200822 10:31:01.280" endtime="20200822 10:31:02.864"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>Apply for this Position</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200812 12:19:16.759" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=84.0.4147.125)
-</msg>
-<status status="FAIL" starttime="20200812 12:19:16.706" endtime="20200812 12:19:16.759"></status>
+<status status="PASS" starttime="20200822 10:31:02.864" endtime="20200822 10:31:02.886"></status>
 </kw>
-<msg timestamp="20200812 12:19:16.759" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=84.0.4147.125)
-</msg>
-<msg timestamp="20200812 12:19:16.772" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=84.0.4147.125)
-</msg>
-<status status="FAIL" starttime="20200812 12:19:16.703" endtime="20200812 12:19:16.772"></status>
+<status status="PASS" starttime="20200822 10:31:01.279" endtime="20200822 10:31:02.886"></status>
 </kw>
-<status status="FAIL" starttime="20200812 12:19:16.153" endtime="20200812 12:19:16.773"></status>
+<status status="PASS" starttime="20200822 10:30:58.728" endtime="20200822 10:31:02.886"></status>
 </kw>
-<status status="FAIL" starttime="20200812 12:19:13.953" endtime="20200812 12:19:16.773"></status>
+<kw name="Enter first name" library="jobPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=first_name</arg>
+<arg>${firstName}</arg>
+</arguments>
+<msg timestamp="20200822 10:31:02.887" level="INFO">Typing text 'john' into text field 'id=first_name'.</msg>
+<status status="PASS" starttime="20200822 10:31:02.887" endtime="20200822 10:31:03.080"></status>
 </kw>
-<status status="FAIL" starttime="20200812 12:19:13.950" endtime="20200812 12:19:16.773"></status>
+<status status="PASS" starttime="20200822 10:31:02.886" endtime="20200822 10:31:03.080"></status>
 </kw>
-<status status="FAIL" starttime="20200812 12:19:13.949" endtime="20200812 12:19:16.773"></status>
+<kw name="Enter last name" library="jobPage">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>result_format=%Y-%m-%d %H:%M:%S.%f</arg>
+</arguments>
+<assign>
+<var>${CurrentDate}</var>
+</assign>
+<msg timestamp="20200822 10:31:03.084" level="INFO">${CurrentDate} = 2020-08-22 10:31:03.082705</msg>
+<status status="PASS" starttime="20200822 10:31:03.081" endtime="20200822 10:31:03.084"></status>
 </kw>
-<status status="FAIL" starttime="20200812 12:19:13.948" endtime="20200812 12:19:16.774"></status>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${CurrentDate}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${datetime}</var>
+</assign>
+<msg timestamp="20200822 10:31:03.089" level="INFO">${datetime} = 2020-08-22 10:31:03.082705</msg>
+<status status="PASS" starttime="20200822 10:31:03.085" endtime="20200822 10:31:03.089"></status>
 </kw>
-<status status="FAIL" starttime="20200812 12:19:13.947" endtime="20200812 12:19:16.774"></status>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=last_name</arg>
+<arg>${lastName}${datetime.microsecond}</arg>
+</arguments>
+<msg timestamp="20200822 10:31:03.090" level="INFO">Typing text 'doe82705' into text field 'id=last_name'.</msg>
+<status status="PASS" starttime="20200822 10:31:03.089" endtime="20200822 10:31:03.279"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:03.081" endtime="20200822 10:31:03.279"></status>
+</kw>
+<kw name="Enter email" library="jobPage">
+<kw name="Get Current Date" library="DateTime">
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<arguments>
+<arg>result_format=%Y-%m-%d %H:%M:%S.%f</arg>
+</arguments>
+<assign>
+<var>${CurrentDate}</var>
+</assign>
+<msg timestamp="20200822 10:31:03.282" level="INFO">${CurrentDate} = 2020-08-22 10:31:03.281246</msg>
+<status status="PASS" starttime="20200822 10:31:03.281" endtime="20200822 10:31:03.282"></status>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<doc>Converts between supported `date formats`.</doc>
+<arguments>
+<arg>${CurrentDate}</arg>
+<arg>datetime</arg>
+</arguments>
+<assign>
+<var>${datetime}</var>
+</assign>
+<msg timestamp="20200822 10:31:03.283" level="INFO">${datetime} = 2020-08-22 10:31:03.281246</msg>
+<status status="PASS" starttime="20200822 10:31:03.282" endtime="20200822 10:31:03.284"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=email</arg>
+<arg>${firstName}${lastName}${datetime.microsecond}@applicantpro.com</arg>
+</arguments>
+<msg timestamp="20200822 10:31:03.285" level="INFO">Typing text 'johndoe281246@applicantpro.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20200822 10:31:03.284" endtime="20200822 10:31:03.700"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${MICROSECONDS}</arg>
+</arguments>
+<msg timestamp="20200822 10:31:03.701" level="INFO"></msg>
+<status status="PASS" starttime="20200822 10:31:03.700" endtime="20200822 10:31:03.701"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:03.280" endtime="20200822 10:31:03.701"></status>
+</kw>
+<kw name="Enter phone" library="jobPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=contact_number</arg>
+<arg>${phone}</arg>
+</arguments>
+<msg timestamp="20200822 10:31:03.702" level="INFO">Typing text '0000000000' into text field 'id=contact_number'.</msg>
+<status status="PASS" starttime="20200822 10:31:03.702" endtime="20200822 10:31:03.874"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:03.701" endtime="20200822 10:31:03.875"></status>
+</kw>
+<kw name="Click checkbox" library="jobPage">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=info_use_consent</arg>
+</arguments>
+<msg timestamp="20200822 10:31:03.877" level="INFO">Clicking element 'id=info_use_consent'.</msg>
+<status status="PASS" starttime="20200822 10:31:03.877" endtime="20200822 10:31:04.040"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:03.875" endtime="20200822 10:31:04.040"></status>
+</kw>
+<kw name="Click submit button" library="jobPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=apply_button</arg>
+</arguments>
+<msg timestamp="20200822 10:31:04.041" level="INFO">Clicking button 'id=apply_button'.</msg>
+<status status="PASS" starttime="20200822 10:31:04.041" endtime="20200822 10:31:04.166"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Apply with Resume</arg>
+</arguments>
+<status status="PASS" starttime="20200822 10:31:04.167" endtime="20200822 10:31:04.407"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:04.040" endtime="20200822 10:31:04.407"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:30:58.727" endtime="20200822 10:31:04.407"></status>
+</kw>
+<kw name="Click no thanks" library="jobPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=no_thanks_button</arg>
+</arguments>
+<msg timestamp="20200822 10:31:04.409" level="INFO">Clicking button 'id=no_thanks_button'.</msg>
+<status status="PASS" starttime="20200822 10:31:04.408" endtime="20200822 10:31:04.496"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>What is your current mailing address</arg>
+</arguments>
+<status status="PASS" starttime="20200822 10:31:04.496" endtime="20200822 10:31:04.746"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:04.408" endtime="20200822 10:31:04.747"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:30:58.727" endtime="20200822 10:31:04.747"></status>
+</kw>
+<kw name="Enter address one" library="jobPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=street1</arg>
+<arg>321 east</arg>
+</arguments>
+<msg timestamp="20200822 10:31:04.747" level="INFO">Typing text '321 east' into text field 'id=street1'.</msg>
+<status status="PASS" starttime="20200822 10:31:04.747" endtime="20200822 10:31:04.980"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:04.747" endtime="20200822 10:31:04.981"></status>
+</kw>
+<kw name="Enter address two" library="jobPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=street2</arg>
+<arg>Jupiter Lane</arg>
+</arguments>
+<msg timestamp="20200822 10:31:04.982" level="INFO">Typing text 'Jupiter Lane' into text field 'id=street2'.</msg>
+<status status="PASS" starttime="20200822 10:31:04.982" endtime="20200822 10:31:05.233"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:04.981" endtime="20200822 10:31:05.234"></status>
+</kw>
+<kw name="Enter state" library="jobPage">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>id=state_id</arg>
+<arg>45</arg>
+</arguments>
+<msg timestamp="20200822 10:31:05.236" level="INFO">Selecting options from selection list 'id=state_id' by value 45.</msg>
+<status status="PASS" starttime="20200822 10:31:05.235" endtime="20200822 10:31:05.358"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:05.234" endtime="20200822 10:31:05.358"></status>
+</kw>
+<kw name="Enter city" library="jobPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=city</arg>
+<arg>saratoga springs</arg>
+</arguments>
+<msg timestamp="20200822 10:31:05.360" level="INFO">Typing text 'saratoga springs' into text field 'id=city'.</msg>
+<status status="PASS" starttime="20200822 10:31:05.359" endtime="20200822 10:31:05.707"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:05.359" endtime="20200822 10:31:05.707"></status>
+</kw>
+<kw name="Enter zip" library="jobPage">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=zip</arg>
+<arg>84045</arg>
+</arguments>
+<msg timestamp="20200822 10:31:05.708" level="INFO">Typing text '84045' into text field 'id=zip'.</msg>
+<status status="PASS" starttime="20200822 10:31:05.708" endtime="20200822 10:31:05.844"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:05.707" endtime="20200822 10:31:05.844"></status>
+</kw>
+<kw name="Click save and continue" library="jobPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=save_contact_info_button</arg>
+</arguments>
+<msg timestamp="20200822 10:31:05.846" level="INFO">Clicking button 'id=save_contact_info_button'.</msg>
+<status status="PASS" starttime="20200822 10:31:05.845" endtime="20200822 10:31:07.007"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Setup Password</arg>
+</arguments>
+<status status="PASS" starttime="20200822 10:31:07.008" endtime="20200822 10:31:07.035"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:05.845" endtime="20200822 10:31:07.036"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:30:58.726" endtime="20200822 10:31:07.038"></status>
+</kw>
+<kw name="Enter password" library="applyApi">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Choose Your Password</arg>
+</arguments>
+<status status="PASS" starttime="20200822 10:31:07.039" endtime="20200822 10:31:07.064"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>p</arg>
+</arguments>
+<msg timestamp="20200822 10:31:07.064" level="INFO">Typing text 'p' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20200822 10:31:07.064" endtime="20200822 10:31:07.277"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password_confirm</arg>
+<arg>p</arg>
+</arguments>
+<msg timestamp="20200822 10:31:07.279" level="INFO">Typing text 'p' into text field 'id=password_confirm'.</msg>
+<status status="PASS" starttime="20200822 10:31:07.277" endtime="20200822 10:31:07.468"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=save_new_password</arg>
+</arguments>
+<msg timestamp="20200822 10:31:07.468" level="INFO">Clicking button 'id=save_new_password'.</msg>
+<status status="PASS" starttime="20200822 10:31:07.468" endtime="20200822 10:31:07.859"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Password updated successfully</arg>
+</arguments>
+<status status="PASS" starttime="20200822 10:31:07.859" endtime="20200822 10:31:07.877"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:07.038" endtime="20200822 10:31:07.877"></status>
+</kw>
+<kw name="Check job questions" library="applyApi">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="steps"]/a/span[text()="THISWONTWORK Job Questions"]</arg>
+</arguments>
+<assign>
+<var>${c}</var>
+</assign>
+<msg timestamp="20200822 10:31:07.899" level="INFO">${c} = 0</msg>
+<status status="PASS" starttime="20200822 10:31:07.878" endtime="20200822 10:31:07.899"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${c}&gt;0</arg>
+<arg>applyApi.Job questions</arg>
+</arguments>
+<status status="PASS" starttime="20200822 10:31:07.899" endtime="20200822 10:31:07.900"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:07.878" endtime="20200822 10:31:07.900"></status>
+</kw>
+<kw name="Check resume" library="applyApi">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="steps"]/a/span[text()="Resume"]</arg>
+</arguments>
+<assign>
+<var>${c}</var>
+</assign>
+<msg timestamp="20200822 10:31:07.931" level="INFO">${c} = 1</msg>
+<status status="PASS" starttime="20200822 10:31:07.901" endtime="20200822 10:31:07.931"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${c}&gt;0</arg>
+<arg>applyApi.Resume</arg>
+</arguments>
+<kw name="Resume" library="applyApi">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="steps"]/a/span[text()="Resume"]</arg>
+</arguments>
+<msg timestamp="20200822 10:31:07.933" level="INFO">Clicking element 'xpath=//*[@id="steps"]/a/span[text()="Resume"]'.</msg>
+<status status="PASS" starttime="20200822 10:31:07.933" endtime="20200822 10:31:08.016"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Copy/Paste Text</arg>
+</arguments>
+<status status="PASS" starttime="20200822 10:31:08.016" endtime="20200822 10:31:08.474"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=resume_text</arg>
+<arg>my example resume</arg>
+</arguments>
+<msg timestamp="20200822 10:31:08.474" level="INFO">Typing text 'my example resume' into text field 'id=resume_text'.</msg>
+<status status="PASS" starttime="20200822 10:31:08.474" endtime="20200822 10:31:08.820"></status>
+</kw>
+<kw name="Scroll Page To Location" library="applyApi">
+<arguments>
+<arg>0</arg>
+<arg>2000</arg>
+</arguments>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+</arguments>
+<msg timestamp="20200822 10:31:08.823" level="INFO">Executing JavaScript:
+window.scrollTo(0,2000)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200822 10:31:08.822" endtime="20200822 10:31:08.829"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:08.820" endtime="20200822 10:31:08.829"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>id=save_and_upload</arg>
+</arguments>
+<status status="PASS" starttime="20200822 10:31:08.829" endtime="20200822 10:31:08.865"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=save_and_upload</arg>
+</arguments>
+<msg timestamp="20200822 10:31:08.866" level="INFO">Clicking button 'id=save_and_upload'.</msg>
+<status status="PASS" starttime="20200822 10:31:08.866" endtime="20200822 10:31:08.969"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200822 10:31:10.971" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200822 10:31:08.969" endtime="20200822 10:31:10.971"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:07.932" endtime="20200822 10:31:10.971"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:07.931" endtime="20200822 10:31:10.971"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:07.901" endtime="20200822 10:31:10.972"></status>
+</kw>
+<kw name="Employment History" library="applyApi">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="steps"]/a/span[text()="Employment History"]</arg>
+</arguments>
+<msg timestamp="20200822 10:31:10.973" level="INFO">Clicking element 'xpath=//*[@id="steps"]/a/span[text()="Employment History"]'.</msg>
+<status status="PASS" starttime="20200822 10:31:10.973" endtime="20200822 10:31:11.055"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Add Employer</arg>
+</arguments>
+<status status="PASS" starttime="20200822 10:31:11.055" endtime="20200822 10:31:11.537"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=company</arg>
+<arg>my example company</arg>
+</arguments>
+<msg timestamp="20200822 10:31:11.539" level="INFO">Typing text 'my example company' into text field 'id=company'.</msg>
+<status status="PASS" starttime="20200822 10:31:11.537" endtime="20200822 10:31:11.925"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=is_current_employer</arg>
+</arguments>
+<msg timestamp="20200822 10:31:11.926" level="INFO">Clicking element 'id=is_current_employer'.</msg>
+<status status="PASS" starttime="20200822 10:31:11.925" endtime="20200822 10:31:12.044"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>id=dates_employed_start_month</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200822 10:31:12.044" level="INFO">Selecting options from selection list 'id=dates_employed_start_month' by value 1.</msg>
+<status status="PASS" starttime="20200822 10:31:12.044" endtime="20200822 10:31:12.177"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>id=dates_employed_start_year</arg>
+<arg>2012</arg>
+</arguments>
+<msg timestamp="20200822 10:31:12.178" level="INFO">Selecting options from selection list 'id=dates_employed_start_year' by value 2012.</msg>
+<status status="PASS" starttime="20200822 10:31:12.177" endtime="20200822 10:31:12.310"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=may_we_contact_no</arg>
+</arguments>
+<msg timestamp="20200822 10:31:12.311" level="INFO">Clicking element 'id=may_we_contact_no'.</msg>
+<status status="PASS" starttime="20200822 10:31:12.310" endtime="20200822 10:31:12.433"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=submit_employment</arg>
+</arguments>
+<msg timestamp="20200822 10:31:12.435" level="INFO">Clicking button 'id=submit_employment'.</msg>
+<status status="PASS" starttime="20200822 10:31:12.434" endtime="20200822 10:31:12.571"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200822 10:31:14.572" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200822 10:31:12.571" endtime="20200822 10:31:14.572"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:10.972" endtime="20200822 10:31:14.572"></status>
+</kw>
+<kw name="Education" library="applyApi">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="steps"]/a/span[text()="Education"]</arg>
+</arguments>
+<msg timestamp="20200822 10:31:14.573" level="INFO">Clicking element 'xpath=//*[@id="steps"]/a/span[text()="Education"]'.</msg>
+<status status="PASS" starttime="20200822 10:31:14.573" endtime="20200822 10:31:14.644"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Add Educational Experience</arg>
+</arguments>
+<status status="PASS" starttime="20200822 10:31:14.644" endtime="20200822 10:31:15.111"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=name</arg>
+<arg>example high school</arg>
+</arguments>
+<msg timestamp="20200822 10:31:15.112" level="INFO">Typing text 'example high school' into text field 'id=name'.</msg>
+<status status="PASS" starttime="20200822 10:31:15.112" endtime="20200822 10:31:15.553"></status>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<arguments>
+<arg>id=type_id</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200822 10:31:15.554" level="INFO">Selecting options from selection list 'id=type_id' by value 1.</msg>
+<status status="PASS" starttime="20200822 10:31:15.554" endtime="20200822 10:31:15.674"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=did_graduate_yes</arg>
+</arguments>
+<msg timestamp="20200822 10:31:15.675" level="INFO">Clicking element 'id=did_graduate_yes'.</msg>
+<status status="PASS" starttime="20200822 10:31:15.674" endtime="20200822 10:31:15.785"></status>
+</kw>
+<kw name="Scroll Page To Location" library="applyApi">
+<arguments>
+<arg>0</arg>
+<arg>2000</arg>
+</arguments>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(${x_location},${y_location})</arg>
+</arguments>
+<msg timestamp="20200822 10:31:15.787" level="INFO">Executing JavaScript:
+window.scrollTo(0,2000)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200822 10:31:15.786" endtime="20200822 10:31:15.794"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:15.785" endtime="20200822 10:31:15.794"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="education_form"]/div[6]/div/input</arg>
+</arguments>
+<msg timestamp="20200822 10:31:15.795" level="INFO">Clicking element 'xpath=//*[@id="education_form"]/div[6]/div/input'.</msg>
+<status status="PASS" starttime="20200822 10:31:15.794" endtime="20200822 10:31:15.912"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2</arg>
+</arguments>
+<msg timestamp="20200822 10:31:17.913" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20200822 10:31:15.912" endtime="20200822 10:31:17.913"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:31:14.572" endtime="20200822 10:31:17.913"></status>
+</kw>
+<status status="PASS" starttime="20200822 10:30:58.726" endtime="20200822 10:31:17.913"></status>
 </kw>
 <tags>
 <tag>current</tag>
 </tags>
-<status status="FAIL" starttime="20200812 12:19:10.817" endtime="20200812 12:19:16.774" critical="yes">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=84.0.4147.125)
-</status>
+<status status="PASS" starttime="20200822 10:30:55.776" endtime="20200822 10:31:17.914" critical="yes"></status>
 </test>
-<status status="FAIL" starttime="20200812 12:18:33.571" endtime="20200812 12:19:16.778"></status>
+<status status="PASS" starttime="20200822 10:30:55.391" endtime="20200822 10:31:17.915"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="1">Critical Tests</stat>
-<stat pass="6" fail="1">All Tests</stat>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1">current</stat>
+<stat pass="1" fail="0">current</stat>
 </tag>
 <suite>
-<stat pass="6" fail="1" id="s1" name="Index">Index</stat>
+<stat pass="1" fail="0" id="s1" name="Index">Index</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20200812 12:19:16.759" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=84.0.4147.125)
-</msg>
 </errors>
 </robot>

@@ -47,3 +47,5 @@ Fill password
     applyApi.Enter password
     applyApi.Check job questions
     applyApi.Check resume
+    applyApi.Employment History
+    applyApi.Education
